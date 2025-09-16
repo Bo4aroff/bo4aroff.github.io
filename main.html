@@ -1,0 +1,1042 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Денис Бочаров - Архитектор Data-Решений</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.cdnfonts.com/css/fort" rel="stylesheet">
+    <style>
+        :root {
+            --primary-bg: #ffffff;
+            /* Белый фон */
+            --primary-black: #000000;
+            --primary-text: #000000;
+            /* Чёрный текст */
+            --accent: #FFC107;
+            /* Жёлтый акцент (как в Material Design) */
+            --accent-dark: #E0A800;
+            /* Более тёмный жёлтый для hover */
+            --secondary-bg: #f9f9f9;
+            /* Светло-серый фон для блоков */
+            --section-bg: #ffffff;
+            /* Белый фон секций */
+            --text-dark: #000000;
+            /* Основной текст – чёрный */
+            --text-light: #333333;
+            /* Второстепенный текст – тёмно-серый */
+            --border: #E0E0E0;
+            /* Лёгкие серые границы */
+            --text-white: #ffffff;
+        }
+
+        /* Reset + base */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Helvetica Neue', Arial, sans-serif
+        }
+
+        html,
+        body {
+            height: 100%
+        }
+
+        body {
+            background: var(--primary-bg);
+            color: var(--text-soft);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px
+        }
+
+        /* Header */
+        .header {
+            background: linear-gradient(90deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.00)), var(--primary-bg);
+            color: var(--primary-text);
+            padding: 44px 0;
+            position: relative;
+            overflow: hidden;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .header::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            height: 100%;
+            width: 38%;
+            background: linear-gradient(135deg, rgba(255, 210, 74, 0.12), rgba(230, 181, 0, 0.06));
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .header-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: relative;
+            z-index: 2;
+            gap: 20px
+        }
+
+        .profile-container {
+            display: flex;
+            align-items: center;
+            gap: 28px
+        }
+
+        .profile-img {
+            width: 112px;
+            height: 112px;
+            border-radius: 50%;
+            border: 3px solid rgba(255, 210, 74, 0.95);
+            background: linear-gradient(180deg, #0f1418, #0b0d10);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary-text);
+            font-size: 2.2rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6);
+            z-index: -777;
+        }
+
+        .profile-img img {
+
+            object-fit: cover;
+            position: relative;
+            z-index: -1;
+            left: -75px;
+        }
+
+        .profile-text {
+            flex: 1;
+            min-width: 0;
+            margin-left: 120px;
+        }
+
+        .name {
+            font-family: 'Fort', Arial, sans-serif;
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 10px;
+            letter-spacing: -1px;
+
+        }
+
+        .name a {
+            font-family: 'Fort', Arial, sans-serif;
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 10px;
+            letter-spacing: -1px;
+            color: var(--accent-dark);
+
+        }
+
+        .title {
+            font-size: 1rem;
+            color: var(--text-soft);
+            font-weight: 500;
+            display: inline-block;
+            padding: 6px 10px;
+            border-radius: 6px;
+            background: transparent;
+            border: 1px solid transparent;
+        }
+
+        .title a {
+            font-size: 1rem;
+            color: var(--accent-dark);
+            font-weight: 500;
+            display: inline-block;
+            border-radius: 6px;
+            background: transparent;
+            border: 1px solid transparent;
+        }
+
+        .title_mob {
+
+            font-size: 1rem;
+            color: var(--text-soft);
+            font-weight: 500;
+            display: inline-block;
+            padding: 6px 10px;
+            border-radius: 6px;
+            display: none;
+            background: transparent;
+            border: 1px solid transparent;
+        }
+
+        /* Navigation */
+        .nav {
+            background: transparent;
+            padding: 16px 0;
+            border-bottom: 1px solid var(--border);
+            position: sticky;
+            top: 0;
+            z-index: 30;
+            backdrop-filter: blur(4px);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: center;
+            gap: 34px
+        }
+
+        .nav-item {
+            color: var(--text-soft);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.98rem;
+            padding: 8px 6px;
+            position: relative;
+            transition: color .18s ease;
+        }
+
+        .nav-item::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: -8px;
+            height: 3px;
+            width: 0;
+            background: var(--accent);
+            transition: width .22s ease;
+            border-radius: 3px;
+        }
+
+        .nav-item:hover {
+            color: var(--accent)
+        }
+
+        .nav-item:hover::after {
+            width: 100%
+        }
+
+        /* Sections */
+        .section {
+            padding: 72px 0
+        }
+
+        .section-title {
+            font-size: 37px;
+            font-weight: 900;
+            color: var(--text-dark);
+            margin-bottom: 28px;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: "";
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: -18px;
+            width: 56px;
+            height: 3px;
+            background: var(--accent);
+            border-radius: 2px;
+        }
+
+        .content {
+            margin: 0 auto;
+            padding: 0 20px;
+            background: var(--primary-black);
+        }
+
+        .main {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 150px;
+
+        }
+
+        .main h2 {
+            color: var(--text-white)
+        }
+
+
+        .image img {
+            width: 600px;
+            height: 520px;
+            object-fit: cover;
+
+        }
+
+        /* About */
+        .about-content {
+            font-size: 1.05rem;
+            line-height: 1.7;
+            max-width: 820px;
+            margin: 0 auto;
+            color: var(--text-white)
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: var(--accent);
+            color: #000;
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-weight: 600;
+            text-decoration: none;
+            margin-top: 18px;
+            transition: transform .15s ease, box-shadow .15s ease;
+            box-shadow: 0 6px 18px rgba(255, 210, 74, 0.09);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 26px rgba(255, 210, 74, 0.12)
+        }
+
+        /* Grids & cards */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+            max-width: 1000px;
+            margin: 0 auto
+        }
+
+        .skill-category {
+            background: var(--card-bg);
+            padding: 22px;
+            border-radius: 10px;
+            border: 1px solid var(--border);
+            transition: transform .18s ease, box-shadow .18s ease;
+        }
+
+        .skill-category:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 18px 40px rgba(0, 0, 0, 0.6)
+        }
+
+        .skill-category h3 {
+            color: var(--primary-text);
+            margin-bottom: 14px;
+            font-size: 1.05rem;
+            font-weight: 600;
+            padding-bottom: 10px;
+            border-bottom: 2px solid rgba(255, 210, 74, 0.08)
+        }
+
+        .skill-list {
+            list-style: none;
+            padding-left: 0
+        }
+
+        .skill-list li {
+            margin-bottom: 10px;
+            padding-left: 22px;
+            position: relative;
+            color: var(--text-soft);
+            font-size: 0.98rem
+        }
+
+        .skill-list li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            top: 0;
+            color: var(--accent);
+            font-weight: 700
+        }
+
+        /* Experience - Tabs */
+        .experience-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+
+        .experience-tab {
+            padding: 10px 20px;
+            background: transparent;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        .experience-tab.active {
+            background: var(--accent);
+            color: #000;
+            border-color: var(--accent);
+        }
+
+        .experience-tab:hover:not(.active) {
+            background: rgba(255, 193, 7, 0.1);
+        }
+
+        /* Experience - Timeline */
+        .timeline {
+            position: relative;
+            max-width: 920px;
+            margin: 0 auto;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 30px;
+            top: 0;
+            height: 100%;
+            width: 3px;
+            background: var(--accent);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 40px;
+            padding-left: 80px;
+        }
+
+        .timeline-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .timeline-dot {
+            position: absolute;
+            left: 22px;
+            top: 0;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: var(--accent);
+            border: 4px solid var(--primary-bg);
+            z-index: 2;
+        }
+
+        .timeline-content {
+            background: var(--card-bg);
+            padding: 22px;
+            border-radius: 10px;
+            border: 1px solid var(--border);
+            transition: all .18s ease;
+        }
+
+        .timeline-content:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 18px 36px rgba(0, 0, 0, 0.6);
+        }
+
+        .job-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 14px;
+            gap: 12px;
+        }
+
+        .job-title {
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: var(--primary-text);
+        }
+
+        .company {
+            color: var(--accent);
+            font-weight: 700;
+            margin-top: 6px;
+        }
+
+        .date {
+            color: var(--text-soft);
+            font-style: italic;
+            background: linear-gradient(180deg, rgba(255, 210, 74, 0.06), rgba(255, 210, 74, 0.02));
+            padding: 5px 10px;
+            border-radius: 8px;
+            font-size: 0.92rem;
+            border: 1px solid rgba(255, 210, 74, 0.06);
+        }
+
+        .achievement-list {
+            list-style: none;
+            padding-left: 0;
+            margin-top: 8px;
+        }
+
+        .achievement-list li {
+            margin-bottom: 12px;
+            padding-left: 22px;
+            position: relative;
+            color: var(--text-soft);
+        }
+
+        .achievement-list li::before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-weight: 700;
+        }
+
+        /* Education */
+        .education-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+            gap: 24px;
+            max-width: 920px;
+            margin: 0 auto;
+        }
+
+        .education-item {
+            background: var(--card-bg);
+            padding: 18px;
+            border-radius: 10px;
+            border: 1px solid var(--border);
+        }
+
+        .education-title {
+            font-weight: 700;
+            color: var(--primary-text);
+            margin-bottom: 8px;
+        }
+
+        .institute {
+            color: var(--text-soft);
+            margin-bottom: 8px;
+        }
+
+        /* Additional */
+        .additional-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 20px;
+            max-width: 920px;
+            margin: 0 auto;
+        }
+
+        .additional-item {
+            background: var(--card-bg);
+            padding: 18px;
+            border-radius: 10px;
+            border: 1px solid var(--border);
+        }
+
+        .additional-item h3 {
+            color: var(--primary-text);
+            margin-bottom: 10px;
+            font-weight: 700;
+            border-bottom: 2px solid rgba(255, 210, 74, 0.06);
+            padding-bottom: 8px;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--primary-black);
+            color: var(--primary-bg);
+            padding: 54px 0 36px;
+            border-top: 1px solid rgba(255, 255, 255, 0.03);
+        }
+
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 28px;
+            margin-bottom: 26px;
+            align-items: start;
+        }
+
+        .footer-section h3 {
+            color: var(--accent);
+            margin-bottom: 12px;
+            font-size: 1rem;
+        }
+
+        .footer-contact {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            color: var(--text-soft);
+        }
+
+        .footer-contact-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .footer-contact-item i {
+            width: 20px;
+            color: var(--accent);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            color: var(--text-soft);
+            font-size: 0.95rem;
+            padding-top: 12px;
+            border-top: 1px solid rgba(255, 255, 255, 0.02);
+            margin-top: 18px;
+        }
+
+        .footer-text {
+            color: var(--text-soft);
+            margin-top: 6px;
+        }
+
+        /* small utility highlight class for inline accenting */
+        .highlight {
+            display: inline-block;
+            background: var(--accent);
+            color: #000;
+            padding: 2px 6px;
+            border-radius: 6px;
+            font-weight: 700;
+            font-size: 0.92rem;
+            line-height: 1;
+        }
+
+        /* Responsive tweaks */
+        @media (max-width:900px) {
+            .header-container {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                gap: 14px;
+                padding: 6px 0;
+            }
+
+            .job-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 8px;
+            }
+
+            .nav-container {
+                gap: 18px;
+                flex-wrap: wrap;
+            }
+
+            .timeline::before {
+                left: 20px;
+            }
+
+            .timeline-item {
+                padding-left: 60px;
+            }
+
+            .timeline-dot {
+                left: 12px;
+            }
+        }
+
+        @media (max-width:520px) {
+            .main {
+                flex-direction: column;
+                gap: 50px;
+            }
+
+            .main h2 {
+                font-size: 25px;
+            }
+
+            .name {
+                font-size: 1.6rem;
+
+            }
+
+            .name a {
+                font-size: 1.6rem;
+
+            }
+
+            .profile-text {
+                margin-left: 36px;
+            }
+
+            .profile-img {
+                width: 96px;
+                height: 96px;
+                font-size: 1.6rem;
+            }
+
+            .profile-img img {
+
+                left: -61px;
+                height: 720px;
+            }
+
+            .section {
+                padding: 48px 0;
+            }
+
+            .section-title {
+                font-size: 28px;
+
+            }
+
+            .title {
+                display: none;
+            }
+
+            .title_mob {
+                display: inline-block;
+            }
+
+            .title a {
+
+                color: var(--text-soft);
+
+            }
+
+            .image img {
+                height: 369px;
+                width: 357px;
+            }
+
+            .skills-grid,
+            .education-grid,
+            .additional-grid {
+                gap: 16px;
+            }
+
+            .timeline::before {
+                left: 15px;
+            }
+
+            .timeline-item {
+                padding-left: 45px;
+            }
+
+            .timeline-dot {
+                left: 7px;
+                width: 16px;
+                height: 16px;
+            }
+
+            .timeline-content {
+                padding: 16px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container header-container">
+            <div class="profile-container">
+                <div class="profile-img">
+                    <img src="/output_esquire.jpg" alt="">
+                </div>
+                <div class="profile-text">
+                    <h1 class="name">Денис<a>Бочаров</a></h1>
+                    <div class="title">АРХИТЕКТОР DATA-РЕШ<a>ЕНИЙ &amp; АНАЛИТИК ДАННЫХ</a></div>
+                    <div class="title_mob">АРХИТЕКТОР DATA-РЕШЕНИЙ &amp; АНАЛИТИК ДАННЫХ</div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="container">
+            <div class="nav-container">
+                <a href="#about" class="nav-item">ПРОФИЛЬ</a>
+                <a href="#skills" class="nav-item">НАВЫКИ</a>
+                <a href="#experience" class="nav-item">ОПЫТ</a>
+                <a href="#education" class="nav-item">ОБРАЗОВАНИЕ</a>
+                <a href="#additional" class="nav-item">ДОПОЛНИТЕЛЬНО</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+        <div class="content">
+            <div class="container">
+                <div class="main">
+                    <div class="text_content">
+                        <h2 class="section-title">ПРОФЕССИОНАЛЬНЫЙ ПРОФИЛЬ</h2>
+                        <div class="about-content">
+                            <p>Опытный аналити и руководитель с более чем 10-летним опытом в медицинском холдинге.
+                                Специализируюсь
+                                на сквозной автоматизации бизнес-процессов, внедрении data-driven подхода и разработке
+                                ML-решений
+                                под ключ. Обладаю уникальным сочетанием глубокого понимания бизнеса (healthcare),
+                                экспертизы в
+                                анализе данных и full-stack разработки внутренних инструментов. Нацелен на создание
+                                измеримой
+                                бизнес-ценности через внедрение современных технологий анализа данных и машинного
+                                обучения.</p>
+                            <div style="text-align:center">
+                                <a href="#contact" class="cta-button" style="margin-top:18px">Связаться со мной</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="image">
+                        <img src="/glowing-light-blue-cerebral-cortex-qdyru7qskns7u0gw.jpg" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section" style="background: var(--secondary-bg);">
+        <div class="container">
+            <h2 class="section-title">КЛЮЧЕВЫЕ НАВЫКИ</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>DATA SCIENCE &amp; ML</h3>
+                    <ul class="skill-list">
+                        <li>Прогнозное моделирование (отток, выручка — Facebook Prophet, scikit-learn)</li>
+                        <li>Кластеризация и сегментация клиентов</li>
+                        <li>Работа с несбалансированными данными</li>
+                        <li>Feature engineering</li>
+                    </ul>
+                </div>
+
+                <div class="skill-category">
+                    <h3>DATA ANALYSIS</h3>
+                    <ul class="skill-list">
+                        <li>Операционная и финансовая аналитика (LTV, отток, выручка, дебиторская задолженность)</li>
+                        <li>Визуализация данных, построение дашбордов</li>
+                    </ul>
+                </div>
+
+                <div class="skill-category">
+                    <h3>РАЗРАБОТКА &amp; AUTOMATION</h3>
+                    <ul class="skill-list">
+                        <li>Full-stack разработка на Django (бэкенд, фронтенд, деплой)</li>
+                        <li>Автоматизация отчетности (Power Query, Excel)</li>
+                        <li>Парсинг данных (BeautifulSoup, Selenium, RegEx)</li>
+                        <li>Создание Telegram-ботов</li>
+                    </ul>
+                </div>
+
+                <div class="skill-category">
+                    <h3>БАЗЫ ДАННЫХ</h3>
+                    <ul class="skill-list">
+                        <li>SQL (сложные запросы, анализ больших данных)</li>
+                        <li>SQLite, проектирование структур данных</li>
+                    </ul>
+                </div>
+
+                <div class="skill-category">
+                    <h3>УПРАВЛЕНИЕ</h3>
+                    <ul class="skill-list">
+                        <li>Полный цикл ведения проектов (от гипотезы до внедрения)</li>
+                        <li>Постановка задач командам разработки и аналитиков</li>
+                        <li>Взаимодействие с топ-менеджментом</li>
+                    </ul>
+                </div>
+
+                <div class="skill-category">
+                    <h3>ИНТЕРЕСЫ</h3>
+                    <ul class="skill-list">
+                        <li>Исследование алгоритмов компьютерного зрения (OpenCV, распознавание образов)</li>
+                        <li>Количественные методы анализа</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="section">
+        <div class="container">
+            <h2 class="section-title">ОПЫТ РАБОТЫ</h2>
+
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="job-header">
+                            <div>
+                                <div class="job-title">Заместитель начальника отдела медицинского сопровождения и
+                                    клиентского сервиса</div>
+                                <div class="company">АО «Медси»</div>
+                            </div>
+                            <div class="date">2013 – настоящее время</div>
+                        </div>
+                        <ul class="achievement-list">
+                            <li><strong>Внедрение системы предиктивной аналитики и ML-моделей:</strong> Провел
+                                кластерный
+                                анализ пациентов на основе поведенческих паттернов (сезонность, динамика посещений,
+                                диагнозы) для точной сегментации базы. Разработал и внедрил модель прогнозирования
+                                оттока
+                                клиентов. <em>Результат: снижение оттока в ключевых сегментах на 15% за 6 мес.</em></li>
+                            <li><strong>Разработка корпоративного портала и автоматизация процессов
+                                    (Full-Stack):</strong> С
+                                нуля разработал внутренний портал на Django (архитектура 27+ моделей данных,
+                                админ-панель).
+                                Функционал: база знаний, онбординг, модуль контроля продаж, интеграция с
+                                Telegram-ботами.
+                                <em>Результат: сокращение времени адаптации на 25%, автоматизация 80% рутинных
+                                    запросов.</em>
+                            </li>
+                            <li><strong>Операционная и финансовая аналитика:</strong> Настроил систему
+                                автоматизированной
+                                отчетности по KPI (выручка, дебиторка, загрузка врачей). Реализовал автоматическую
+                                проверку
+                                медицинских заключений (RegEx) для выявления критичных отметок (BI-RADS, TI-RADS).</li>
+                            <li><strong>Сбор и анализ конкурентной информации:</strong> Создал систему мониторинга рынка
+                                и
+                                конкурентов через парсинг сайтов и API, данные интегрированы в дашборды для принятия
+                                решений
+                                по ценообразованию.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="job-header">
+                            <div>
+                                <div class="job-title">Специалист по безопасности</div>
+                                <div class="company">Частная охранная компания</div>
+                            </div>
+                            <div class="date">2010 – 2013</div>
+                        </div>
+                        <ul class="achievement-list">
+                            <li>Обеспечение безопасности объектов. Реализация проектов по автоматизации и анализу
+                                данных.
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="job-header">
+                            <div>
+                                <div class="job-title">Служба по контракту</div>
+                                <div class="company">Министерство обороны РФ</div>
+                            </div>
+                            <div class="date">2006 – 2010</div>
+                        </div>
+                        <ul class="achievement-list">
+                            <li>Опыт управления в условиях высоких нагрузок. Развитие структурного мышления и
+                                стрессоустойчивости.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="section" style="background: var(--secondary-bg);">
+        <div class="container">
+            <h2 class="section-title">ОБРАЗОВАНИЕ</h2>
+            <div class="education-grid">
+                <div class="education-item">
+                    <div class="education-title">Высшее образование (Бакалавр)</div>
+                    <div class="institute">Специальность: Организация информационной безопасности</div>
+                    <div class="date">Год окончания: 2012</div>
+                </div>
+
+                <div class="education-item">
+                    <div class="education-title">Неполное высшее образование</div>
+                    <div class="institute">Специальность: Ремонт и эксплуатация ракетно-артиллерийского вооружения</div>
+                    <div class="date">Годы обучения: 2006 – 2010</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Additional Info Section -->
+    <section id="additional" class="section">
+        <div class="container">
+            <h2 class="section-title">ДОПОЛНИТЕЛЬНАЯ ИНФОРМАЦИЯ</h2>
+            <div class="additional-grid">
+                <div class="additional-item">
+                    <h3>Английский язык</h3>
+                    <p style="color:var(--text-soft)">Technical English (чтение документации и специализированной
+                        литературы)</p>
+                </div>
+
+                <div class="additional-item">
+                    <h3>Хобби</h3>
+                    <p style="color:var(--text-soft)">Исследование алгоритмов ML и CV, quantitative analysis, тяжёлая
+                        атлетика, бокс</p>
+                </div>
+
+                <div class="additional-item">
+                    <h3>Личные качества</h3>
+                    <p style="color:var(--text-soft)">Аналитический склад ума, результат-ориентированность,
+                        самостоятельность, быстрая обучаемость</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="footer">
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-section">
+                    <h3>Контакты</h3>
+                    <div class="footer-contact">
+                        <div class="footer-contact-item">
+                            <i class="fas fa-phone"></i>
+                            <span>+7 (925) 169-75-20</span>
+                        </div>
+                        <div class="footer-contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>bocharoff686@gmail.com</span>
+                        </div>
+                        <div class="footer-contact-item">
+                            <i class="fab fa-telegram"></i>
+                            <span>@bo4aroff</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Соцсети</h3>
+                    <div class="footer-contact">
+                        <div class="footer-contact-item">
+                            <i class="fab fa-github"></i>
+                            <span>github.com/your_github</span>
+                        </div>
+                        <div class="footer-contact-item">
+                            <i class="fab fa-linkedin"></i>
+                            <span>linkedin.com/in/your_linkedin</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Местоположение</h3>
+                    <div class="footer-contact">
+                        <div class="footer-contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Москва, Россия</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>© 2025Денис Бочаров. Архитектор Data-Решений</p>
+                <p class="footer-text">Создано с помощью современных технологий анализа данных</p>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
