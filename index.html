@@ -266,7 +266,7 @@
         }
 
         .main h2 {
-            color: var(--accent);
+            color: var(--accent)
         }
 
 
@@ -606,6 +606,111 @@
             line-height: 1;
         }
 
+        /* Brand Philosophy Section */
+        .brand-philosophy {
+            padding: 80px 0;
+            background: var(--secondary-bg);
+        }
+
+        .philosophy-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .philosophy-title {
+            font-size: 37px;
+            font-weight: 900;
+            color: var(--text-dark);
+            text-align: center;
+            margin-bottom: 50px;
+            position: relative;
+        }
+
+        .philosophy-title::after {
+            content: "";
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: -18px;
+            width: 56px;
+            height: 3px;
+            background: var(--accent);
+            border-radius: 2px;
+        }
+
+        .philosophy-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+
+        .philosophy-item {
+            padding: 30px;
+            background: var(--primary-bg);
+            border-radius: 10px;
+            border: 1px solid var(--border);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .philosophy-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .philosophy-item h3 {
+            color: var(--text-dark);
+            margin: 0 0 20px 0;
+            font-size: 22px;
+            font-weight: 700;
+        }
+
+        .philosophy-item p {
+            color: var(--text-light);
+            margin: 0;
+            line-height: 1.6;
+            font-size: 16px;
+        }
+
+        .approach-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .approach-item {
+            padding: 25px;
+            background: var(--primary-bg);
+            border-radius: 8px;
+            border: 1px solid var(--border);
+            border-left: 4px solid var(--accent);
+        }
+
+        .approach-item h4 {
+            color: var(--text-dark);
+            margin: 0 0 15px 0;
+            font-size: 18px;
+            font-weight: 700;
+        }
+
+        .approach-item p {
+            color: var(--text-light);
+            margin: 0;
+            line-height: 1.5;
+        }
+
+        .philosophy-statement {
+            text-align: center;
+            font-style: italic;
+            font-size: 18px;
+            color: var(--text-light);
+            margin-top: 40px;
+            padding: 20px;
+            background: rgba(255, 193, 7, 0.05);
+            border-radius: 8px;
+        }
+
         /* Responsive tweaks */
         @media (max-width:900px) {
             .header-container {
@@ -615,6 +720,18 @@
                 gap: 14px;
                 padding: 6px 0;
             }
+                        .philosophy-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .approach-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .philosophy-item {
+                padding: 25px;
+            }
+        
 
             .job-header {
                 flex-direction: column;
@@ -727,6 +844,17 @@
             .timeline-content {
                 padding: 16px;
             }
+                        .philosophy-title {
+                font-size: 28px;
+            }
+            
+            .philosophy-item {
+                padding: 20px;
+            }
+            
+            .approach-item {
+                padding: 20px;
+            }
         }
     </style>
 </head>
@@ -769,7 +897,7 @@
                     <div class="text_content">
                         <h2 class="section-title">ПРОФЕССИОНАЛЬНЫЙ ПРОФИЛЬ</h2>
                         <div class="about-content">
-                            <p>Опытный аналитик и руководитель с более чем 10-летним опытом в медицинском холдинге.
+                            <p>Опытный аналити и руководитель с более чем 10-летним опытом в медицинском холдинге.
                                 Специализируюсь
                                 на сквозной автоматизации бизнес-процессов, внедрении data-driven подхода и разработке
                                 ML-решений
@@ -791,7 +919,58 @@
             </div>
         </div>
     </section>
-
+    <!-- Brand Philosophy Section -->
+    <section id="philosophy" class="brand-philosophy">
+        <div class="philosophy-container">
+            <h2 class="philosophy-title">МОЯ ФИЛОСОФИЯ РАБОТЫ</h2>
+    
+            <div class="philosophy-grid">
+                <div class="philosophy-item">
+                    <h3>Искусство синтеза</h3>
+                    <p>Соединяю техническую глубину с бизнес-визионерством, создавая решения, которые опережают время и
+                        работают на стратегическую перспективу. Преобразую сложные технические концепции в понятные
+                        бизнес-результаты.</p>
+                </div>
+    
+                <div class="philosophy-item">
+                    <h3>Элегантность исполнения</h3>
+                    <p>Каждая система — это произведение архитектурного искусства, где технологическая мощь встречается с
+                        бизнес-элегантностью. Создаю решения, которые не только функциональны, но и интуитивно понятны.</p>
+                </div>
+    
+                <div class="philosophy-item">
+                    <h3>Стратегическая глубина</h3>
+                    <p>Data-решения как шахматная партия: анализирую на несколько ходов вперед, предвосхищая потребности
+                        бизнеса и вызовы рынка. Каждое решение — это вклад в долгосрочную стратегию развития.</p>
+                </div>
+            </div>
+    
+            <div class="approach-grid">
+                <div class="approach-item">
+                    <h4>Индивидуальный подход</h4>
+                    <p>Каждый проект — уникальное произведение, созданное под конкретные амбиции и вызовы бизнеса. Глубоко
+                        погружаюсь в контекст, чтобы предложить оптимальное решение.</p>
+                </div>
+    
+                <div class="approach-item">
+                    <h4>Бескомпромиссное качество</h4>
+                    <p>Стандарты, которые становятся отраслевым эталоном и работают годами. Каждый элемент системы продуман
+                        до мелочей и тестирован на надежность.</p>
+                </div>
+    
+                <div class="approach-item">
+                    <h4>Стратегическое партнерство</h4>
+                    <p>Работаю как часть команды, а не как внешний исполнитель. Взаимодействую на всех уровнях — от
+                        технических специалистов до топ-менеджмента.</p>
+                </div>
+            </div>
+    
+            <div class="philosophy-statement">
+                Мой подход сочетает техническую экспертизу с бизнес-пониманием для создания решений,
+                которые не просто работают, а становятся конкурентным преимуществом и двигают бизнес вперед
+            </div>
+        </div>
+    </section>
     <!-- Skills Section -->
     <section id="skills" class="section" style="background: var(--secondary-bg);">
         <div class="container">
@@ -1011,7 +1190,7 @@
                     <div class="footer-contact">
                         <div class="footer-contact-item">
                             <i class="fab fa-github"></i>
-                            <span>github.com/Bo4aroff</span>
+                            <span>github.com/your_github</span>
                         </div>
                         <div class="footer-contact-item">
                             <i class="fab fa-linkedin"></i>
