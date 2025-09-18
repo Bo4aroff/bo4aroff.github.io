@@ -740,6 +740,18 @@
             border-radius: 8px;
             border: 1px solid rgba(255, 255, 255, 0.1);
         }
+        .quantitative-item img {
+            height: auto;
+            max-width: 1025px;
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .quantitative-item img:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+        }
 
         .quantitative-item h4 {
             color: var(--accent);
@@ -825,6 +837,9 @@
 
             .timeline-dot {
                 left: 12px;
+            }
+            .quantitative-item img {
+                max-width: 900px;
             }
         }
 
@@ -934,6 +949,10 @@
             .quantitative-item {
                 padding: 20px;
             }
+            .quantitative-item img:hover {
+                transform: none;
+                box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            }
         }
     </style>
 </head>
@@ -1026,7 +1045,10 @@
             <!-- Quantitative Analysis Section -->
             <div class="quantitative-section">
                 <h3 class="quantitative-title">КВАНТИТАТИВНЫЙ АНАЛИЗ & ИНСТИТУЦИОНАЛЬНЫЙ ПОДХОД</h3>
-            
+
+                <div class="quantitative-item">
+                    <img src="images/photo_2025-09-18_11-23-43.jpg" alt="">
+                </div>
                 <div class="quantitative-grid">
                     <div class="quantitative-item">
                         <h4>Квантатильный анализ</h4>
@@ -1061,23 +1083,6 @@
                         </ul>
                     </div>
                 </div>
-            
-                <!--<div class="quantitative-item">
-                    <h4>Синтез методологий</h4>
-                    <p>Сочетание квантатильного анализа с институциональным подходом позволяет
-                        создавать решения, которые не только технически совершенны, но и
-                        организационно реализуемы. Это дает:</p>
-                    <ul class="methodology-list">
-                        <li>Глубокое понимание не только того, "что происходит", но и "почему это
-                            происходит"</li>
-                        <li>Возможность создавать решения, которые работают в реальных
-                            организационных условиях</li>
-                        <li>Способность предвидеть не только технические, но и организационные риски
-                        </li>
-                        <li>Создание устойчивых систем, которые развиваются вместе с организацией
-                        </li>
-                    </ul>
-                </div>-->
             </div>
     
             <div class="approach-grid">
