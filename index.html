@@ -677,6 +677,7 @@
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 25px;
+            margin-top: 15px;
         }
 
         .approach-item {
@@ -711,12 +712,25 @@
             border-radius: 8px;
         }
 /* Quantitative Analysis Section */
-        .quantitative-section {
-            margin: 50px 0;
+
+        .quantitative-section-sol{
+            width: 100vw;           /* полная ширина экрана */
+            margin-left: calc(-50vw + 50%); /* компенсируем центрирование контейнера */
             padding: 40px;
             background: var(--primary-black);
             border-radius: 12px;
             border: 1px solid rgba(255, 255, 255, 0.15);
+        }
+        .quantitative-section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            
+            padding: 40px;
+            background: var(--primary-black);
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            
         }
 
         .quantitative-title {
@@ -952,6 +966,9 @@
                 transform: none;
                 box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
             }
+            .quantitative-title {
+                font-size: 25px;
+            }
         }
     </style>
 </head>
@@ -1042,43 +1059,44 @@
                 </div>
             </div>
             <!-- Quantitative Analysis Section -->
-            <div class="quantitative-section">
-                <h3 class="quantitative-title">КВАНТИТАТИВНЫЙ АНАЛИЗ & ИНСТИТУЦИОНАЛЬНЫЙ ПОДХОД</h3>
-                <div class="quantitative-item-img">
-                    <img src="images/photo_2025-09-18_11-23-43.jpg" alt="">
-                </div>
-                <div class="quantitative-grid">
-                    <div class="quantitative-item">
-                        <h4>Квантатильный анализ</h4>
-                        <p>Использую продвинутые статистические методы для анализа распределения
-                            данных и выявления скрытых паттернов. Работаю не со средними значениями,
-                            а с полным распределением данных, что позволяет:</p>
-                        <ul class="methodology-list">
-                            <li>Выявлять аномалии и выбросы, которые не видны при стандартном
-                                анализе</li>
-                            <li>Строить более точные прогнозные модели, учитывая всю сложность
-                                данных</li>
-                            <li>Определять квантильные зависимости и нелинейные взаимосвязи</li>
-                            <li>Создавать робастные системы, устойчивые к экстремальным значениям
-                            </li>
-                        </ul>
+            <div class="quantitative-section-sol">
+                <div class="quantitative-section">
+                    <h3 class="quantitative-title">КВАНТИТАТИВНЫЙ АНАЛИЗ & ИНСТИТУЦИОНАЛЬНЫЙ ПОДХОД</h3>
+                    <div class="quantitative-item-img">
+                        <img src="images/photo_2025-09-18_11-23-43.jpg" alt="">
                     </div>
-            
-                    <div class="quantitative-item">
-                        <h4>Институциональный подход</h4>
-                        <p>Рассматриваю данные через призму институциональной структуры организации.
-                            Понимаю, что данные — это не просто числа, а отражение бизнес-процессов,
-                            организационной культуры и decision-making процессов:</p>
-                        <ul class="methodology-list">
-                            <li>Анализирую данные в контексте организационной структуры и
-                                бизнес-процессов</li>
-                            <li>Учитываю институциональные ограничения и возможности при разработке
-                                решений</li>
-                            <li>Создаю системы, которые интегрируются в существующие организационные
-                                механизмы</li>
-                            <li>Учитываю человеческий фактор и adoption curve при внедрении
-                                технологий</li>
-                        </ul>
+                    <div class="quantitative-grid">
+                        <div class="quantitative-item">
+                            <h4>Квантатильный анализ</h4>
+                            <p>Использую продвинутые статистические методы для анализа распределения
+                                данных и выявления скрытых паттернов. Работаю не со средними значениями,
+                                а с полным распределением данных, что позволяет:</p>
+                            <ul class="methodology-list">
+                                <li>Выявлять аномалии и выбросы, которые не видны при стандартном
+                                    анализе</li>
+                                <li>Строить более точные прогнозные модели, учитывая всю сложность
+                                    данных</li>
+                                <li>Определять квантильные зависимости и нелинейные взаимосвязи</li>
+                                <li>Создавать робастные системы, устойчивые к экстремальным значениям
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="quantitative-item">
+                            <h4>Институциональный подход</h4>
+                            <p>Рассматриваю данные через призму институциональной структуры организации.
+                                Понимаю, что данные — это не просто числа, а отражение бизнес-процессов,
+                                организационной культуры и decision-making процессов:</p>
+                            <ul class="methodology-list">
+                                <li>Анализирую данные в контексте организационной структуры и
+                                    бизнес-процессов</li>
+                                <li>Учитываю институциональные ограничения и возможности при разработке
+                                    решений</li>
+                                <li>Создаю системы, которые интегрируются в существующие организационные
+                                    механизмы</li>
+                                <li>Учитываю человеческий фактор и adoption curve при внедрении
+                                    технологий</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
