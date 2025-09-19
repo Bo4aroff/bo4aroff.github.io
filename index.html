@@ -734,8 +734,8 @@
         }
 
         .quantitative-title {
-            font-size: 26px;
-            font-weight: 700;
+            font-size: 37px;
+            font-weight: 900;
             color: var(--accent);
             margin-bottom: 25px;
             text-align: center;
@@ -801,6 +801,16 @@
         }
 
         /* Responsive tweaks */
+        @media (max-width:1330px) {
+            .main {
+                flex-direction: column;
+                gap: 50px;
+            }
+            .image img {
+                width: 800px;
+                height: auto;
+            }
+
         @media (max-width:900px) {
             .header-container {
                 flex-direction: column;
@@ -809,7 +819,7 @@
                 gap: 14px;
                 padding: 6px 0;
             }
-                        .philosophy-grid {
+            .philosophy-grid {
                 grid-template-columns: 1fr;
             }
             
@@ -853,6 +863,16 @@
             }
             .quantitative-item img {
                 max-width: 900px;
+            }
+            .main {
+                flex-direction: column;
+                gap: 50px;
+            }
+            .name {
+                font-size: 3.2rem;
+            }
+            .name a {
+                font-size: 3.2rem;
             }
         }
 
@@ -943,7 +963,8 @@
             .timeline-content {
                 padding: 16px;
             }
-                        .philosophy-title {
+            
+            .philosophy-title {
                 font-size: 28px;
             }
             
@@ -957,6 +978,8 @@
 
             .quantitative-section {
                 padding: 25px 20px;
+                border-radius: none; 
+                border: none;
             }
 
             .quantitative-item {
@@ -967,10 +990,56 @@
                 box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
             }
             .quantitative-title {
-                font-size: 25px;
+                font-weight: 900;
+                font-size: 18px;
+            }
+            
+            .quantitative-item-img{
+                display: flex;
+                justify-content: center;
+                max-width: none;
+            
+            }
+            .quantitative-item-img img{
+                width: 130%;
+            
             }
         }
+        @media (max-width: 375px) {
+            .profile-text {
+                margin-left: 22px;
+            }
+            .name a {
+                font-size: 1.4rem;
+            }
+
+            .name {
+                font-size: 1.4rem;
+            
+            }
+
+            .title_mob {
+                font-size: 0.9rem;
+                font-weight: 400;
+            }
+
+            .profile-img img {
+
+                height: 658px;
+            }
+            .image img {
+                height: 289px;
+                width: 331px;
+            }
+
+
+
+        }
+
+
     </style>
+
+
 </head>
 
 <body>
@@ -1011,7 +1080,7 @@
                     <div class="text_content">
                         <h2 class="section-title">ПРОФЕССИОНАЛЬНЫЙ ПРОФИЛЬ</h2>
                         <div class="about-content">
-                            <p>Опытный аналити и руководитель с более чем 10-летним опытом в медицинском холдинге.
+                            <p>Опытный аналитик и руководитель с более чем 10-летним опытом в медицинском холдинге.
                                 Специализируюсь
                                 на сквозной автоматизации бизнес-процессов, внедрении data-driven подхода и разработке
                                 ML-решений
@@ -1249,7 +1318,7 @@
                         </div>
                         <ul class="achievement-list">
                             <li>Обеспечение безопасности объектов. Реализация проектов по автоматизации и анализу
-                                данных.
+                                данных. Реализация проектов по типу Face Recognition в СКУД. Network - анализ. OSINT - парсинг открытых источников. 
                             </li>
                         </ul>
                     </div>
@@ -1267,7 +1336,7 @@
                         </div>
                         <ul class="achievement-list">
                             <li>Опыт управления в условиях высоких нагрузок. Развитие структурного мышления и
-                                стрессоустойчивости.</li>
+                                стрессоустойчивости. Работа с данными и автоматизация процессов. Реализация проектов связанных с Facial Action Unit Analysis </li>
                         </ul>
                     </div>
                 </div>
